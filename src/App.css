@@ -13,34 +13,72 @@ body {
 }
 
 header {
-  background: rgb(60, 59, 94);
+  background: url(./images/gmasKitchen.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
   color: #fff;
-  position: fixed;
-  z-index: 10;
-  min-height: 10vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header::before {
+  content: "";
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 30vh;
+  position: absolute;
+  z-index: 1;
+
+}
+
+@media (min-width: 768px) {
+  header {
+    height: 60vh;
+  }
+  header::before {
+    height: 60vh;
+  }
+}
+
+.brand img {
+  width: 200px;
+}
+
+header h1, header h5 {
+  position: relative;
+  z-index: 10;
+}
+
+.page-title {
+  background-color: #fff;
+}
+
+.btn-primary {
+  background-color:rgb(40, 212, 126) !important;
+  border-color: rgb(40, 212, 126);
+}
+
+.btn-primary:hover {
+  background-color:rgb(95, 90, 223) !important;
+  border-color: rgb(95, 90, 223);
 }
 
 .search-form{
-  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: rgb(88, 87, 139);
-  position: fixed;
-  box-shadow: 0px 5px 10px rgba(71, 71, 71, 0.158);
-  z-index: 10;
-  top: 10vh;
+  background: rgb(255, 255, 255);
+  border-bottom: solid 1px rgb(184, 183, 226);
 }
 
 .search-bar {
-  width: 50%;
-  border: none;
-  padding: 10px;
+  width: 60%;
+  border: solid 1px #ccc;
+  padding: 4px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -48,22 +86,23 @@ header {
 .search-button {
   background: lightsalmon;
   border: none;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .card {
-  border-radius: 5px;
+  border-radius: unset;
+  border: unset;
 }
 
 .card:hover {
-  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+  box-shadow: 0px 0px 0px 5px rgb(255, 160, 122, 1) !important;
 }
 
 .card-body {
-  padding: 3rem;
-  border-top-left-radius: 10px;
+  padding: 1rem;
+  border-top-left-radius: unset;
 }
 .card-title {
   color:  lightsalmon;
@@ -77,17 +116,22 @@ header {
 .overflow {
   overflow: hidden;
   height: 200px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card-img, .card-img-top {
+  border-top-left-radius:0 !important;
+  border-top-right-radius: 0 !important;
 }
 
 .card-img-top {
-  transform: scale(1);
-  transition: transform 0.5s ease;
+  /* transform: scale(1);
+  transition: transform 0.5s ease; */
 }
 
 .card-img-top:hover {
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
 }
 
 .fas {
@@ -136,7 +180,10 @@ ol, ul {
 .top-spacer {
   height: 250px;
 }
-
+.page-footer {
+  background-color: #fff;
+  border-top: solid 1px rgb(184, 183, 226);
+}
 }
 
 

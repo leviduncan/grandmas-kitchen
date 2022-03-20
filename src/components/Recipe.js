@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import RecipeCard from './RecipeCard';
 
 const Recipe = ({ title, calories, image, info, ingredients, diet, yieldFor, source, totalTime, cuisineType, url}) => {
 
@@ -12,27 +13,10 @@ const Recipe = ({ title, calories, image, info, ingredients, diet, yieldFor, sou
 
     return (
         <>
-            <div className="col col-sm-4">
-                <div className="card mb-5 shadow">
-                    <div className="overflow">
-                        <img src={image} className="card-img-top" alt={title}></img>
-                    </div>
-                    <div className="card-body">
-                        <h5 className="card-title">{title}</h5>
-                        <div className="card-text">{info}<hr />
-
-                            <p>
-                                Only {calories} Calories<br />
-                                <i className="fas fa-clock"> </i> <strong> Cooking Time: </strong> {totalTime} mins<br />
-                                <i class="fas fa-utensils"></i> <strong> Cuisine: </strong> {cuisineType}<br />
-                                <i class="fa-solid fa-up-right-from-square"></i> <a href={url} target="_blank">By {source}</a>
-                            </p>
-                        </div>
-                        <Button variant="primary" onClick={handleShow}>
-                            View the ingredients
-                        </Button>
-                    </div>
-                </div>
+            <div className="col-12 col-md-6 col-lg-3">
+                <RecipeCard handleShow={handleShow} 
+                title={title} calories={calories} image={image} info={info} ingredients={ingredients} diet={diet} yieldFor={yieldFor} source={source} totalTime={totalTime} cuisineType={cuisineType} url={url}
+                />
                 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>

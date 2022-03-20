@@ -1,13 +1,14 @@
-import React,{useEffect, useState} from 'react';
-import Header from './components/Header';
-import './App.css';
+import React from 'react';
+import Search from './components/Search'
+import Footer from './components/Footer'
+import './App.css'
 
 const App = () => {
 
   return(
     <div className="App">
-      <Header />
-    
+      <Search />
+      <Footer />
     </div>
   )
 }

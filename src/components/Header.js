@@ -1,17 +1,14 @@
 import React from 'react'
-import Search from './Search'
 
 function Header() {
     return (
         <>
-            <header>
-                <div className="container">
-                    <div className="row">
-                        <h1 className="text-center">Welcome to Grandma's Kitchen</h1>
-                    </div>
-                </div>
-            </header>
-            <Search />
+                    <form onSubmit={getSearch} className="search-form py-4">
+                <input className="search-bar" type="text" value={search} onChange={updateSearch} />
+                <button className="search-button" type="submit">Search</button>
+            </form>
+
+            
         </>
     )
 }

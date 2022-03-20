@@ -6,25 +6,30 @@ import Brand from '../images/gLogo.png'
 
 function Search() {
 
-    require('dotenv').config()
-
-    console.log(process.env.REACT_APP_APP_ID);
-
-    const APP_ID = process.env.REACT_APP_APP_ID;
-    const APP_KEY = process.env.REACT_APP_APP_KEY;
-
-
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState("chicken");
     const [currentPage, setCurrentPage] = useState(1)
     const [recipesPerPage, setRecipesPerPage] = useState(20)
 
-    const getRecipes = async () => {
-        const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=50`);
-        const data = await response.json();
-        setRecipes(data.hits);
-    };
+    const getRecipes = () => {
+        fetch('data.json'
+            , {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }
+        )
+            .then(function (response) {
+                console.log(response)
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(myJson);
+                setRecipes(myJson.hits)
+            });
+    }
 
     useEffect(() => {
         getRecipes();
