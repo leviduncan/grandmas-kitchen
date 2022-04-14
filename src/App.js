@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from './components/Search'
+import LocalSearch from './components/LocalSearch'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -7,7 +7,7 @@ const App = () => {
 
   return(
     <div className="App">
-      <Search />
+      <LocalSearch />
       <Footer />
     </div>
   )
