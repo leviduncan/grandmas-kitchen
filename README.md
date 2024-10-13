@@ -10,6 +10,14 @@ A web application for searching and browsing recipes using an open-source food A
 Table of Contents
 -----------------
 Overview
+Features
+Tech Stack
+Installation
+Challenges and Solutions
+Future Development
+
+
+Overview
 --------
 Recipe Finder is a personal project designed to simplify meal planning and discovery. This application utilizes an open-source food API to provide users with a vast collection of recipes.
 
